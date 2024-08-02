@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Calculadora</title>
+
+
+<Style>
+
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffffff;
+        margin: 0;
+        font-family: Arial;
+        }
+
+    .visor {
+        margin: 20px;
+        color: #ffffff;
+        font-family: Arial;
+        justify-content: right;
+        font-size: 50px;
+        text-align: right;
+
+        }
+
+        .calculadora {
+        background-color: #000000;
+        padding: 20px;
+        border-radius: 10px;
+        }
+
+        .botoes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        }
+
+        .teclas {
+        padding: 20px;
+        border: none;
+        border-radius: 50%;
+        background-color: #333333;
+        color: #fff;
+        font-size: 20px;
+        }
+
+        .teclas.zero {
+        grid-column: span 2;
+        border-radius: 25px;
+        font-size: 20px;
+        }
+
+        .teclas.diferentes {
+        background-color: #ff9f0a;
+        color: #fff;
+        font-size: 20px;
+        }
+
+        .teclas.ac {
+        background-color: #a4a4a4;
+        color: #221c1c;
+        font-size: 20px;
+        }
+
+
+</Style>
+
+</head>
+
+<body>
+    <div class="calculadora">
+        <div class="visor">0</div>
+
+    <div class="botoes">
+            <button class="teclas ac">AC</button>
+            <button class="teclas ac">+/-</button>
+            <button class="teclas ac">%</button>
+            <button class="teclas diferentes">/</button>
+
+            <button class="teclas">7</button>
+            <button class="teclas">8</button>
+            <button class="teclas">9</button>
+            <button class="teclas diferentes">*</button>
+
+            <button class="teclas">4</button>
+            <button class="teclas">5</button>
+            <button class="teclas">6</button>
+            <button class="teclas diferentes">-</button>
+
+            <button class="teclas">1</button>
+            <button class="teclas">2</button>
+            <button class="teclas">3</button>
+            <button class="teclas diferentes">+</button>
+
+            <button class="teclas zero">0</button>
+            <button class="teclas">,</button>
+            <button class="teclas diferentes">=</button>
+        </div>
+</body>
+
+</html>
