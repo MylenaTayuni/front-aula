@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFood - Mercado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('desktop-background.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .topo {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .topo img {
+            height: 40px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #000;
+        }
+        .menu a.botao {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .principal {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .principal img {
+            max-width: 100px;
+            margin: 10px;
+        }
+        .busca {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .busca input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            flex: 1;
+            max-width: 300px;
+        }
+        .busca button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff0000;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+        }
+        .categorias {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .categorias span {
+            padding: 10px 20px;
+            background-color: #f2f2f2;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topo">
+        <img src="ifood-logo-0.png" alt="Logo iFood"> <!-- Caminho para a imagem do logo -->
+        <nav class="menu">
+            <a href="#">Entregador</a>
+            <a href="#">Restaurante e Mercado</a>
+            <a href="#">Carreiras</a>
+            <a href="#">iFood Card</a>
+            <a href="#" class="botao">Criar Conta</a>
+            <a href="#" class="botao">Entrar</a>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <h1>Faça mercado no iFood</h1>
+        <p>Entregamos tudo o que precisa na porta da sua casa, de hortifruti a itens de limpeza</p>
+        <div class="busca">
+            <input type="text" placeholder="Em qual endereço você está?">
+            <button>Ver mercados próximos</button>
+        </div>
+        <div class="categorias">
+            <span>Frios</span>
+            <span>Laticínios</span>
+            <span>Feira</span>
+            <span>Bebidas</span>
+            <span>Doces</span>
+            <span>Massas frescas</span>
+            <span>Limpeza</span>
+            <span>Padaria</span>
+            <span>Higiene</span>
+            <span>Congelados</span>
+            <span>Carnes</span>
+            <span>Cerveja</span>
+        </div>
+
+</body>
+</html>
