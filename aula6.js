@@ -45,7 +45,7 @@ function ex4 ()
     var n1 = num1.value;
     var n2 = num2.value;
     saida.value = parseInt(n1) + parseInt(n2)
-}r
+}
 
 // 5- calculo imc
 // pedir peso e altura
@@ -108,4 +108,71 @@ function ex7 ()
     {
         saida.value = "criança"
     }
+}
+    // 8- Faça um Programa que verifique se uma letra digitada é vogal ou consoante.
+
+
+    function ex8()
+    {
+
+            var letra = valor.value;
+
+            if (letra =="a")
+        {
+            saida.value = "vogal"
+
+        } else if (letra =="e")
+        {
+            saida.value = "vogal"  
     
+        } else if (letra =="i")
+        {
+            saida.value = "vogal"  
+        } else if (letra =="o")
+        {
+            saida.value = "vogal"  
+        } else if (letra =="u")
+        {
+            saida.value = "vogal"  
+        }  
+        else {
+        saida.value = "consoante"
+        }
+    }  
+    
+    // 9- maior ou igual a 7 aprovado / menor que 7 / nota 10 aprovado com distinção 
+
+    function ex9()
+    {
+        var nota = valor.value;
+
+        if (nota >= 10)
+            {
+                saida.value = "Aprovado com distinção";
+
+            }   else if (nota >= 7)
+            {
+                saida.value = "Aprovado"
+            } else 
+            {
+                saida.value = "Reprovado"
+            }
+    }        
+
+     // 10- 3 numeros e mostre o maior e o menor deles 
+
+
+    
+
+
+    // função E - P - S
+
+    function soma(n1, n2)
+    {
+        var resultado = n1 + n2;
+        return resultado;
+    
+    }
+// executa a função 
+    soma (3, 5)
+
