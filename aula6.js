@@ -159,11 +159,6 @@ function ex7 ()
             }
     }        
 
-     // 10- 3 numeros e mostre o maior e o menor deles 
-
-
-    
-
 
     // função E - P - S
 
@@ -176,3 +171,43 @@ function ex7 ()
 // executa a função 
     soma (3, 5)
 
+// 10- faça o fatorial de um número 
+
+function ex10()
+{
+    var num = prompt ("Digite um número");
+    num = parseInt (num);
+
+    while (num > 1) 
+    {
+        resultado = resultado * num;
+        num = num - 1;
+    }
+
+    console,log("o fatorial é:" + "resultado");
+}
+
+// 11- Faça um programa capaz de gerar a série até o n−ésimo termo.
+
+function ex11()
+{
+    var num = prompt ("Digite um número");
+    num = parseInt (num);
+
+    var n1 = 0;
+    var n2 = 1;
+    var resultado = 0;
+
+    while (num > 1) 
+    {
+        resultado = n1 + n2;
+        n1 = n2;
+        n2 = resultado;
+
+        resposta += " " + resultado;
+        
+        num -= 1;
+    }
+        console.log("0" + resposta);
+    
+}
