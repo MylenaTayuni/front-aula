@@ -3,60 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bootstrap</title>
+    <title>Cadastro de Atendimento</title>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery-3.7.1.js"></script>
+    <link href="style.css" rel="stylesheet" />
 
-    <script src="aula9.js"></script>
+<style>
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte e cores base */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Estilização do card */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    padding: 15px;
+}
+
+.card-header h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer {
+    background-color: #f1f1f1;
+    border-top: none;
+    padding: 15px;
+    text-align: right;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Estilo dos inputs e selects */
+.form-control, .form-select {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.invalid-feedback {
+    display: block;
+    font-size: 0.875rem;
+    color: #dc3545;
+    margin-top: 5px;
+}
+
+/* Estilo dos botões */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Espaçamento entre as linhas */
+.row {
+    margin-bottom: 15px;
+}
+
+/* Estilo para os radio buttons */
+.form-check-label {
+    margin-left: 5px;
+    font-size: 1rem;
+}
+
+/* Estilo dos headers de formulários dentro do card */
+.form-label {
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Ajuste de container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+</style>
+
+
 </head>
 <body>
     
 <div class="container">
-
-    
     <div class="card my-5">
-        
         <div class="card-header">
             <h1>Cadastro de Atendimento</h1>
         </div>
-
         <div class="card-body">
-            
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <label id="paciente" class="form-label">Nome paciente</label>
-                        <input class="form-control" type="text" placeholder="Pretinha" />
+                        <label class="form-label">Nome paciente</label>
+                        <input id="paciente" class="form-control" type="text"/>
+                        <div id="error-paciente" class="invalid-feedback">obrigatório.</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label class="form-label">Nome Tutor</label>
-                        <input class="form-control" type="text" />
+                        <input id="tutor" class="form-control" type="text" />
+                        <div id="error-tutor" class="invalid-feedback">obrigatório.</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
                         <label class="form-label">Telefone</label>
-                        <input class="form-control" type="text" />
+                        <input id="telefone" class="form-control" type="text" />
+                        <div id="error-telefone" class="invalid-feedback">obrigatório.</div>
                     </div>
                     <div class="col-2">
                         <label class="form-label">Idade</label>
-                        <input class="form-control" type="text" />
+                        <input id="idade" class="form-control" type="text" />
+                        <div id="error-idade" class="invalid-feedback">obrigatória.</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label class="form-label">Sexo</label>
                         <div class="form-check">
-                            <input name="sexo" class="form-check-input" type="radio" />
-                            <label class="form-check-label" >Macho</label>
+                            <input id="sexo-macho" name="sexo" class="form-check-input" type="radio" value="Macho" />
+                            <label class="form-check-label">Macho</label>
                         </div>
                         <div class="form-check">
-                            <input name="sexo" class="form-check-input" type="radio" />
+                            <input id="sexo-femea" name="sexo" class="form-check-input" type="radio" value="Fêmea" />
                             <label class="form-check-label">Fêmea</label>
                         </div>
-
+                        <div id="error-sexo" class="invalid-feedback">obrigatório.</div>
                     </div>
                     <div class="col">
                         <label class="form-label">Tipo de Serviço</label>
@@ -67,32 +175,35 @@
                             <option value="12">Internamento</option>
                             <option value="13">Exames</option>
                         </select>
+                        <div id="error-servico" class="invalid-feedback">obrigatório.</div>
                     </div>
                 </div>
                 <hr />
-
                 <div id="form-consulta" class="row d-none">
                     <div class="col">
                         <label class="form-label">Médico</label>
-                        <input class="form-control" type="text" />
+                        <input id="medico" class="form-control" type="text" />
+                        <div id="error-medico" class="invalid-feedback">obrigatório.</div>
                     </div>
                 </div>
 
                 <div id="form-banho" class="row d-none">
                     <div class="col">
                         <label class="form-label">Serviço</label>
-                        <select class="form-select">
-                            <option>Banho</option>
-                            <option>Escova</option>
-                            <option>Tosa</option>
+                        <select id="servico-banho" class="form-select">
+                            <option value="Banho">Banho</option>
+                            <option value="Escova">Escova</option>
+                            <option value="Tosa">Tosa</option>
                         </select>
+                        <div id="error-servico-banho" class="invalid-feedback">obrigatório.</div>
                     </div>
                 </div>
 
                 <div id="form-internamento" class="row d-none">
                     <div class="col">
                         <label class="form-label">Data de entrada</label>
-                        <input class="form-control" type="datetime" />
+                        <input id="data-entrada" class="form-control" type="datetime-local" />
+                        <div id="error-data-entrada" class="invalid-feedback">obrigatória.</div>
                     </div>
                 </div>
 
@@ -101,37 +212,140 @@
                         <label>Exames solicitados</label>
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" />
+                            <input id="exame-hemograma" type="checkbox" class="form-check-input" value="Hemograma" />
                             <label class="form-check-label">Hemograma</label>
                         </div>
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" />
+                            <input id="exame-glicemia" type="checkbox" class="form-check-input" value="Glicemia" />
                             <label class="form-check-label">Glicemia</label>
                         </div>
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" />
+                            <input id="exame-gama-gt" type="checkbox" class="form-check-input" value="Gama GT" />
                             <label class="form-check-label">Gama GT</label>
                         </div>
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" />
+                            <input id="exame-tgo" type="checkbox" class="form-check-input" value="TGO" />
                             <label class="form-check-label">TGO</label>
                         </div>
-
                     </div>
                 </div>
 
             </div>
-
         </div>
         <div class="card-footer">
             <button id="bt-salvar" class="btn btn-primary">Salvar</button>
         </div>
     </div>
-
 </div>
 
+<script>
+$(document).ready(function(){
+
+    $("#servico").change(function(){
+        var valor = $(this).val();
+        $("#form-consulta, #form-banho, #form-internamento, #form-exames").addClass("d-none");
+        
+        if (valor == 10) {
+            $("#form-consulta").removeClass("d-none");
+        } else if (valor == 11) {
+            $("#form-banho").removeClass("d-none");
+        } else if (valor == 12) {
+            $("#form-internamento").removeClass("d-none");
+        } else if (valor == 13) {
+            $("#form-exames").removeClass("d-none");
+        }
+    });
+
+    $("#bt-salvar").click(function(event){
+        let valid = true;
+
+        // Validar nome do paciente
+        if ($("#paciente").val().trim() === "") {
+            $("#paciente").addClass("is-invalid");
+            valid = false;
+        } else {
+            $("#paciente").removeClass("is-invalid");
+        }
+
+        // Validar nome do tutor
+        if ($("#tutor").val().trim() === "") {
+            $("#tutor").addClass("is-invalid");
+            valid = false;
+        } else {
+            $("#tutor").removeClass("is-invalid");
+        }
+
+        // Validar telefone
+        if ($("#telefone").val().trim() === "") {
+            $("#telefone").addClass("is-invalid");
+            valid = false;
+        } else {
+            $("#telefone").removeClass("is-invalid");
+        }
+
+        // Validar idade
+        if ($("#idade").val().trim() === "") {
+            $("#idade").addClass("is-invalid");
+            valid = false;
+        } else {
+            $("#idade").removeClass("is-invalid");
+        }
+
+        // Validar sexo
+        if (!$("input[name='sexo']:checked").val()) {
+            $("#sexo-macho, #sexo-femea").addClass("is-invalid");
+            valid = false;
+        } else {
+            $("#sexo-macho, #sexo-femea").removeClass("is-invalid");
+        }
+
+        // Validar tipo de serviço
+        if ($("#servico").val() == "0") {
+            $("#servico").addClass("is-invalid");
+            valid = false;
+        } else {
+            $("#servico").removeClass("is-invalid");
+        }
+
+        // Validar campo adicional de acordo com o serviço selecionado
+        if ($("#form-consulta").is(":visible")) {
+            if ($("#medico").val().trim() === "") {
+                $("#medico").addClass("is-invalid");
+                valid = false;
+            } else {
+                $("#medico").removeClass("is-invalid");
+            }
+        }
+
+        if ($("#form-banho").is(":visible")) {
+            if ($("#servico-banho").val() === "") {
+                $("#servico-banho").addClass("is-invalid");
+                valid = false;
+            } else {
+                $("#servico-banho").removeClass("is-invalid");
+            }
+        }
+
+        if ($("#form-internamento").is(":visible")) {
+            if ($("#data-entrada").val().trim() === "") {
+                $("#data-entrada").addClass("is-invalid");
+                valid = false;
+            } else {
+                $("#data-entrada").removeClass("is-invalid");
+            }
+        }
+
+        // Se não for válido, impedir o envio do formulário
+        if (!valid) {
+            event.preventDefault();
+            alert("Por favor, preencha todos os campos obrigatórios.");
+        }
+    });
+
+});
+</script>
 </body>
 </html>
